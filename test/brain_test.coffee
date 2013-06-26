@@ -1,12 +1,14 @@
 assert = require 'assert'
 
+Robot  = require '../src/robot'
 Brain  = require '../src/brain'
 
 saved   = false
 closing = false
 closed  = false
 
-brain = new Brain
+robot = new Robot
+brain = new Brain robot
 
 brain.on 'save', (data) ->
   is_closing = closing
